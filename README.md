@@ -30,3 +30,40 @@ public class Main
 //https://www.geeksforgeeks.org/biginteger-class-in-java/#:~:text=BigInteger%20class%20is%20used%20for,all%20available%20primitive%20data%20types.
 
 // ***************************************************************************************************************************************************************************
+
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	   Scanner input=new Scanner(System.in);
+	   int t=input.nextInt();
+	   int[][] x=new int[2][5];
+	   for(int i=0;i<t;i++)
+	   {
+	       x[0][i]=input.nextInt();
+	       x[1][i]=input.nextInt();
+	   }
+	   int[] res1=new int[t];
+	   int[] res2=new int[t];
+	   for(int j=0;j<t;j++)
+	   {
+	       res1[j]=( x[0][j]-x[1][j]);
+	       res2[j]=( x[1][j]-x[0][j]);
+	   }
+	   Arrays.sort(res1);
+	   Arrays.sort(res2);
+	   if(res1[t-1]>res2[t-1]){
+	       System.out.println("1 "+ res1[t-1]);
+	   }
+	   else{
+	       System.out.println("2 "+ res2[t-1]);
+	   }
+	
+	}
+}
+
